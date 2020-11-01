@@ -3,99 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/popper.min.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    
-    
-
-    <link rel="stylesheet" href="css/sweetalert2.min.css">
+    <link rel="stylesheet" href="verticall.css">
+    <title>vertical menu</title>
 </head>
 <body>
-   <header>
    
-    <header>
-        <div class="container">
-            <div class="row align-items-stretch justify-content-between">
-                <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-                    <a class="navbar-brand" href="#">Favoritos Plantilla</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-                        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarCollapse">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item dropdown">
-                                <img src="img/cart.jpeg" class="nav-link dropdown-toggle img-fluid" height="70px"
-                                    width="70px" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false"></img>
-                                <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
-                                    <table id="lista-carrito" class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>Imagen</th>
-                                                <th>Nombre</th>
-                                                <th>Precio</th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody></tbody>
-                                    </table>
+   <!-- CONTAINER  -->
+   <div id="container">
+ 
+   
 
-                                    <a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar Carrito</a>
-                                    <a href="#" id="procesar-pedido" class="btn btn-danger btn-block">Procesar
-                                        Compra</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </div>
-    </header>
 
-    <main>
-        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 my-4 mx-auto text-center">
-            <h1 class="display-4 mt-4">Lista de Productos</h1>
-            <p class="lead">Selecciona uno de nuestros productos y accede a un descuento</p>
-        </div>
+     <!-- MENU BUTTON -->
+    <div class="menu">
 
-        <div class="container" id="lista-productos">
-            
-            <div class="card-deck mb-3 text-center">
-                
-                <div class="card mb-4 shadow-sm">
-                    <div class="card-header">
-                        <h4 class="my-0 font-weight-bold">HP PAVILION</h4>
-                    </div>
-                    <div class="card-deck mb-3 text-center">
-                
-                        <div class="card mb-4 shadow-sm">
-                            <div class="card-header">
-                                <h4 class="my-0 font-weight-bold">LG</h4>
-                            </div>
-                            <div class="card-body">
-                                <img src="img/Waifu.jpg" width="300px" class="card-img-top">
-                                <h1 class="card-title pricing-card-title precio">S/. <span class="">4299</span></h1>
+       <ul  class="tab">
+        <li class="tablinks" onclick="Buttonclick(event, 'button-1')" id="defaultOpen">Sección1</li>
+        <li class="tablinks" onclick="Buttonclick(event, 'button-2')">Sección2</li>
+        <li class="tablinks" onclick="Buttonclick(event, 'button-3')">Sección3</li>
         
-                                <ul class="list-unstyled mt-3 mb-4">
-                                    <li></li>
-                                    <li>8 GB RAM</li>
-                                    <li>COLOR PLATEADO</li>
-                                    <li>256 GB DD</li>
-                                </ul>
-                                <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="7">Comprar</a>
-                            </div>
-                        </div>
+      </ul>
+    </div>
+    <!-- END OF  MENU BUTTON  -->
+
+
+    <!-- BOX CONTENT  -->
+    <div class="content">
+
+  <div id="button-1" class="inner-content">
     
-            </div>
-        </main>
-        <script src="js/jquery-3.4.1.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/sweetalert2.min.js"></script>
-        <script src="js/carrito.js"></script>
-        <script src="js/pedido.js"></script>
-      
+  <p >Aqui se muestra la Sección 1 <br> <img src="Imagenes/1.png" alt=""></p>
+ 
+   </div>
+
+   <div id="button-2"class="inner-content">
+    
+  <p class="btn-text-2">Aqui se muestra la Sección 2 <br> <img src="Imagenes/2.jpg" alt=""> </p>
+ 
+   </div>
+
+   <div id="button-3"  class="inner-content">
+    
+  <p  class="btn-text-3">Aqui se muestra la Sección 3 <br> <img src="Imagenes/3.png" alt=""> </p>
+ 
+   </div>
+
+ 
+    </div>
+    <!-- END OF BOX CONTENT  -->
+
+
+    <!-- FOOTER -->
+  
+
+   </div> 
+   <!-- END OF CONTAINER -->
+
+
+   <!-- Declaring  JAVASCRIPT  for BUTTUONS functions-->
+   <script>
+    function  Buttonclick(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("inner-content");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += "active";
+    }
+    
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+    </script>
+
 </body>
 </html>
