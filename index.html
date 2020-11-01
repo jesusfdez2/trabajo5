@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="verticall.css">
+    <title>vertical menu</title>
+</head>
+<body>
+   
+   <!-- CONTAINER  -->
+   <div id="container">
+ 
+   
+
+
+     <!-- MENU BUTTON -->
+    <div class="menu">
+
+       <ul  class="tab">
+        <li class="tablinks" onclick="Buttonclick(event, 'button-1')" id="defaultOpen">Sección1</li>
+        <li class="tablinks" onclick="Buttonclick(event, 'button-2')">Sección2</li>
+        <li class="tablinks" onclick="Buttonclick(event, 'button-3')">Sección3</li>
+        
+      </ul>
+    </div>
+    <!-- END OF  MENU BUTTON  -->
+
+
+    <!-- BOX CONTENT  -->
+    <div class="content">
+
+  <div id="button-1" class="inner-content">
+    
+  <p >Aqui se muestra la Sección 1 <br> <img src="Imagenes/1.png" alt=""></p>
+ 
+   </div>
+
+   <div id="button-2"class="inner-content">
+    
+  <p class="btn-text-2">Aqui se muestra la Sección 2 <br> <img src="Imagenes/2.jpg" alt=""> </p>
+ 
+   </div>
+
+   <div id="button-3"  class="inner-content">
+    
+  <p  class="btn-text-3">Aqui se muestra la Sección 3 <br> <img src="Imagenes/3.png" alt=""> </p>
+ 
+   </div>
+
+ 
+    </div>
+    <!-- END OF BOX CONTENT  -->
+
+
+    <!-- FOOTER -->
+  
+
+   </div> 
+   <!-- END OF CONTAINER -->
+
+
+   <!-- Declaring  JAVASCRIPT  for BUTTUONS functions-->
+   <script>
+    function  Buttonclick(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("inner-content");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += "active";
+    }
+    
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+    </script>
+
+</body>
+</html>
